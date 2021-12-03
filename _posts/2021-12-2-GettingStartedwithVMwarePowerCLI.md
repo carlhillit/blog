@@ -10,8 +10,9 @@ tags: [PowerCLI,VMware]
 Before I can begin working with PowerCLI, I'll first need to install the module.
 
 From my computer, I'll open PowerShell as an Administrator and install the VMware PowerCLI module from the PS Gallery by typing:
-
-    Install-Module VMware.PowerCLI -Force
+````posh
+Install-Module VMware.PowerCLI -Force
+````
 
 ![_config.yml]({{ site.baseurl }}/images/installpowercli/InstallPowerCLI.gif)
 
