@@ -29,17 +29,17 @@ This makes it a bit easier to transfer and store the VM template outside of vCen
 
 [From vSphere 6.5 and newer](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-AFEDC48B-C96F-4088-9C1F-4F0A30E965DE.html), VM templates can only be exported in OVF format from the vCenter web GUI, which is why I'm using PowerCLI for this demonstration.
 
-## Prerequisites
+### Prerequisites
 
-[Install the PowerCLI Module]({% post_url 2021-12-2-GettingStartedwithVMwarePowerCLI %})
+[Install the PowerCLI Module]({% link _posts/2021-12-2-GettingStartedwithVMwarePowerCLI.md %})
 
-### Get-VM
+
+## Retrieving VM Object
 
 The command that I'll be using to export the VM to an OVA template is `Export-vApp`.
 Before I use the command, I'll take a look at the [documentation](https://powercli-core.readthedocs.io/en/latest/cmd_export.html) for a quick reference on how to use it.
 
 I can see that either the `VApp` or `VM` parameter is required. For this demo, I'm using `VM`.
-
 
 Since the VM parameter type requires a VM object type, we need to use `Get-VM` before I can export.
 
