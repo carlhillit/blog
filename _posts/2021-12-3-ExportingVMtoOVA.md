@@ -45,35 +45,46 @@ Since the VM parameter type requires a VM object type, we need to use `Get-VM` b
 
 The two VMs that I want to export to a template are named "WS19C", which is Windows Server 2019 Core and "WS19D", with Desktop Experience.
 
+````posh
     Get-VM -Name WS19C
+````
 
 *if the VM is powered on, be sure to power it off at this time*
 
 To export a single VM, I can simply assign a single VM to a variable, then use the variable with the Export-VApp command
 
+````posh
     $VM = Get-VM -Name WS19C
+````
 
 Verify the `$VM` variable is the correct type
 
+````posh
     $VM.GetType()
+````
 
 ## Exporting the Template
 
 Now everything is in place, I can now export the VM to the OVA template:
 
+````posh
     Export-VApp -VM $VM -Description "Windows Server 2019 Core" -Format Ova -Destination C:\templates
+````
 
 Since the VM parameter allows objects to be passed to it from the pipeline, I could combine these two commands into a one-liner:
 
+````posh
     Get-VM -Name WS19C | Export-VApp -Format Ova -Destination C:\templates
+````
 
 *PowerCLI will assume the name of the VM as the ova file name*
 
 Either the command documentation, or a quick Ctrl+Space keyboard shortcut, will show me that the VM parameter can take an array of objects as input, as indicated by the double brackets ( `[]` ).
 This means that I can export multiple VMs to templates with a single command.
 
+````posh
     Get-VM WS19* | Export-VApp -Format Ova -Destination C:\templates
-
+````
 
 ## Conclusion
 
