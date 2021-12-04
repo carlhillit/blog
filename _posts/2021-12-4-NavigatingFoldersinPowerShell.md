@@ -34,6 +34,8 @@ The alias `cd` can be used as a substitute.
 
 If I wanted to change to another folder, I can navigate to the folder in File Explorer and copy the path from the address bar and paste into PowerShell.
 
+#### Copy As Path
+
 Another technique using File Explorer is to hold Shift and right-click on the folder and select "Copy as path" to copy the folder path to the clipboard.
 
 This is particularly useful as it includes double quotes which is needed for paths with spaces.
