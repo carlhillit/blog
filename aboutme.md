@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Carl
-permalink: /blog/about/
+permalink: /aboutme/
 ---
 
 I'm an IT professional that blogs about systems management and automation.
