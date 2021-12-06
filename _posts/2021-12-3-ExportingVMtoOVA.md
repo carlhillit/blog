@@ -23,7 +23,7 @@ The .ovf file is like an index configuration file in XML format that tells vCent
 
 ### OVA
 OVAs are more like zip files for VM templates in that it is a single file that contains other files.
-This makes it a bit easier to transfer and store the VM template outside of vCenter.
+This makes it a bit easier to transfer and store the VM template outside of vCenter. As a matter of fact, you can even extract the .ova file with 7zip in Windows, or with `tar xzf` in Linux/MacOS.
 
 ![_config.yml]({{ site.baseurl }}/images/exportova/7zipextractova.png)
 
