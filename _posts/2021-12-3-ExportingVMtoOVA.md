@@ -10,9 +10,11 @@ In this video, I'll demonstrate an easy way to export a VMware virtual machine t
 [![Watch the video](https://img.youtube.com/vi/jqM3fNx0py0/hqdefault.jpg)](https://youtu.be/jqM3fNx0py0)
 
 ## OVF vs OVA
+
 First, a little background on OVF and OVA templates:
 
 ### OVF
+
 When exporting VM templates from the vCenter web GUI, a "Folder of files (OVF)" is the default chosen option.
 
 ![_config.yml]({{ site.baseurl }}/images/exportova/exportovf.png)
@@ -22,6 +24,7 @@ The .ovf file is like an index configuration file in XML format that tells vCent
 ![_config.yml]({{ site.baseurl }}/images/exportova/ovfvscode.png)
 
 ### OVA
+
 OVAs are more like zip files for VM templates in that it is a single file that contains other files.
 This makes it a bit easier to transfer and store the VM template outside of vCenter. As a matter of fact, you can even extract the .ova file with 7zip in Windows, or with `tar xzf` in Linux/MacOS.
 
@@ -32,7 +35,6 @@ This makes it a bit easier to transfer and store the VM template outside of vCen
 ### Prerequisites
 
 [Install the PowerCLI Module]({% link _posts/2021-12-2-GettingStartedwithVMwarePowerCLI.md %})
-
 
 ## Retrieving VM Object
 

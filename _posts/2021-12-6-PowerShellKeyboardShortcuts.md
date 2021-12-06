@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 7 Keyboard Shortcuts for PowerShell Speed and Efficiency
-published: false
+published: true
 tags: [PowerShell]
 ---
 
