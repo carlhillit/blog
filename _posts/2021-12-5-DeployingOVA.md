@@ -3,11 +3,14 @@ layout: post
 title: Deploy OVA to VM
 published: true
 tags: [PowerCLI,VMware]
+youtubeId: 8kHbFiHTb4Q
 ---
 
 Following up on my last video how to export a VM to OVA template, now I'll show how to deploy an OVA with PowerCLI.
 
-[![Watch the video](https://img.youtube.com/vi/8kHbFiHTb4Q/hqdefault.jpg)](https://youtu.be/8kHbFiHTb4Q)
+<!--[![Watch the video](https://img.youtube.com/vi/8kHbFiHTb4Q/hqdefault.jpg)](https://youtu.be/8kHbFiHTb4Q)-->
+
+{% include youtubePlayer.html id=page.youtubeId %}
 
 ## Connect to vCenter Server
 
