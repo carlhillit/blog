@@ -10,11 +10,12 @@ Learn how to restart a Windows computer remotely using PowerShell, even if the r
 [![Watch the video](https://img.youtube.com/vi/czDLFWBZ-JQ/hqdefault.jpg)](https://youtu.be/czDLFWBZ-JQ)
 
 Virtual Machines Used in Demo
-| Description | Operating System | ComputerName |
-| --- | :---: | ---: |
-| Local Computer | Windows 10 w/ BitLocker | WIN101 |
-| Remote Computer | Windows 10 w/ BitLocker | WIN102 |
-| Domain Controller | Windows Server 2019 | DC |
+
+Description | Operating System | ComputerName
+--- | --- | ---
+Local Computer | Windows 10 w/ BitLocker | WIN101
+Remote Computer | Windows 10 w/ BitLocker | WIN102
+Domain Controller | Windows Server 2019 | DC
 
 ## Restart-Computer[^1]
 
