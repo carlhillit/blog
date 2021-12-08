@@ -3,11 +3,12 @@ layout: post
 title: Restart Computers Remotely with PowerShell
 published: true
 tags: [PowerShell]
+youtubeId: czDLFWBZ-JQ
 ---
 
 Learn how to restart a Windows computer remotely using PowerShell, even if the remote computer is BitLocker enabled.
 
-[![Watch the video](https://img.youtube.com/vi/czDLFWBZ-JQ/hqdefault.jpg)](https://youtu.be/czDLFWBZ-JQ)
+{% include youtubePlayer.html id=page.youtubeId %}
 
 Virtual Machines Used in Demo
 

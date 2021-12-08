@@ -3,11 +3,12 @@ layout: post
 title: Exporting VMs to OVA
 published: true
 tags: [PowerCLI,VMware]
+youtubeId: jqM3fNx0py0
 ---
 
 In this video, I'll demonstrate an easy way to export a VMware virtual machine to an OVA template file using PowerCLI.
 
-[![Watch the video](https://img.youtube.com/vi/jqM3fNx0py0/hqdefault.jpg)](https://youtu.be/jqM3fNx0py0)
+{% include youtubePlayer.html id=page.youtubeId %}
 
 ## OVF vs OVA
 

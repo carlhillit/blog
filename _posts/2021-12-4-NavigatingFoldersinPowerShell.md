@@ -3,11 +3,12 @@ layout: post
 title: Navigating Folders with PowerShell
 published: true
 tags: [PowerShell]
+youtubeId: gd1GT5gfIPk
 ---
 
 In this short video, I'm going to show you some ways to navigate folders, aka directories, with PowerShell.
 
-[![Watch the video](https://img.youtube.com/vi/gd1GT5gfIPk/hqdefault.jpg)](https://youtu.be/gd1GT5gfIPk)
+{% include youtubePlayer.html id=page.youtubeId %}
 
 ## Navigating Folders
 

@@ -3,13 +3,14 @@ layout: post
 title: 7 Keyboard Shortcuts for PowerShell Speed and Efficiency
 published: true
 tags: [PowerShell]
+youtubeId: cenJHwdz3Mk
 ---
 
 7 of my favorite keyboard shortcuts to make using PowerShell faster and more efficient.
 
-[![Watch the video](https://img.youtube.com/vi/cenJHwdz3Mk/hqdefault.jpg)](https://youtu.be/cenJHwdz3Mk)
+{% include youtubePlayer.html id=page.youtubeId %}
 
-# TL;DR
+## TL;DR
 
 1. **UP arrow** key to cycle through previously entered commands
 2. **Tab** to auto-complete
