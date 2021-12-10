@@ -30,7 +30,7 @@ I typically use the SAM account name to identify a user.
 
 It can be found in ADUC by double-clicking on the user, selecting the **Account** tab, and looking under **User Logon Name (Pre-Windows 2000)**.
 
-![_config.yml]({{ site.baseurl }}/images/unlockalladaccounts/samaccountname.jpg)
+![_config.yml]({{ site.baseurl }}/images/unlockalladaccounts/samaccountname.jpg:width=250)
 
 I'll go ahead and copy the SAM account name to the clipboard.
 
