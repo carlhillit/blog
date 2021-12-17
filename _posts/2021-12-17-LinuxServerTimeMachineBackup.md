@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MacOS Time Machine Backup on Linux Server
-published: false
+published: true
 tags: [Linux,MacOS,Time Machine]
 ---
 Use a disk on a linux server to store MacOS Time Machine backups.
