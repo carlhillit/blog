@@ -28,7 +28,9 @@ I have a spare hard drive that I've dedicated to Time Machine backups that I've 
 
 I can identify the drive by Model and Serial Number or World Wide Name (WWN).
 
-`lsblk -o NAME,MODEL,SERIAL,WWN`
+````bash
+lsblk -o NAME,MODEL,SERIAL,WWN
+````
 
 The Model, Serial Number, and WWN are printed on the drive's label, so I can confirm that the drive's name is **sdf**.
 
@@ -79,11 +81,15 @@ parted /dev/sdf
 
 Format the new partition to the XFS file system:
 
-`mkfs.xfs -f /dev/sdf1`
+````bash
+mkfs.xfs -f /dev/sdf1
+````
 
 Just for funsies, I'll label the drive to further identify it as a Time Machine backup drive:
 
-`xfs_admin -L timemachine /dev/sdf1`
+````bash
+xfs_admin -L timemachine /dev/sdf1`
+````
 
 Now that my drive is partitioned and formatted, I can move on to the next step.
 
@@ -109,15 +115,21 @@ mount -a
 
 ## Install Packages
 
-`dnf install -y netatalk avahi`
+````bash
+dnf install -y netatalk avahi
+````
 
 ## Enable Services
 
-`systemctl enable --now netatalk avahi-daemon`
+````bash
+systemctl enable --now netatalk avahi-daemon
+````
 
 ## Edit Netatalk Config
 
-`vim /etc/netatalk/afp.conf`
+````bash
+vim /etc/netatalk/afp.conf
+````
 
 Add a section for your Time Machine:
 
