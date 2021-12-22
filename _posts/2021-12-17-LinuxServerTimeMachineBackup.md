@@ -24,52 +24,9 @@ I'll be using Fedora 35 Server Edition as my backup server for this blog post, b
 
 ## Partition and Format Drive
 
-I have a spare hard drive that I've dedicated to Time Machine backups that I've installed in my file server.
+I have a spare hard drive that I've dedicated to Time Machine backups that I've installed in my file server. The drive's name is **sdf**.
 
-I can identify the drive by Model and Serial Number or World Wide Name (WWN).
-
-````bash
-lsblk -o NAME,MODEL,SERIAL,WWN
-````
-
-The Model, Serial Number, and WWN are printed on the drive's label, so I can confirm that the drive's name is **sdf**.
-
-I've used this drive before, so I'd like to know more information about it.
-
-````
-[root@nas ~]# parted /dev/sdf print
-Model: ATA TOSHIBA DT01ABA3 (scsi)
-Disk /dev/sdf: 3001GB
-Sector size (logical/physical): 512B/4096B
-Partition Table: gpt
-Disk Flags:
-
-Number  Start   End     Size    File system  Name         Flags
- 1      1049kB  3001GB  3001GB  ntfs         MEMES
-
-[root@nas ~]#
-````
-
-I don't need my old memes, so I'll wipe the drive.
-
-````
-[root@nas ~]# wipefs -a /dev/sdf
-/dev/sdf: 8 bytes were erased at offset 0x00000200 (gpt): 45 46 49 20 50 41 52 54
-/dev/sdf: 8 bytes were erased at offset 0x2baa1475e00 (gpt): 45 46 49 20 50 41 52 54
-/dev/sdf: 2 bytes were erased at offset 0x000001fe (PMBR): 55 aa
-/dev/sdf: calling ioctl to re-read partition table: Success
-
-[root@nas ~]# parted /dev/sdf print
-Error: /dev/sdf: unrecognised disk label
-Model: ATA TOSHIBA DT01ABA3 (scsi)
-Disk /dev/sdf: 3001GB
-Sector size (logical/physical): 512B/4096B
-Partition Table: unknown
-Disk Flags:
-[root@nas ~]#
-````
-
-Now the drive has been wiped, I can partition it. I prefer GPT because it's newer and the larger capacity drives it can support[^1].
+I'll first partition it.[^1] I prefer GPT because it's newer and the larger capacity drives it can support[^2].
 
 ````bash
 parted /dev/sdf
@@ -79,16 +36,10 @@ parted /dev/sdf
 (parted) quit
 ````
 
-Format the new partition to the XFS file system:
+Format the new partition to the XFS file system and label the drive "timemachine" to further identify it as a Time Machine backup drive:
 
 ````bash
-mkfs.xfs -f /dev/sdf1
-````
-
-Just for funsies, I'll label the drive to further identify it as a Time Machine backup drive:
-
-````bash
-xfs_admin -L timemachine /dev/sdf1`
+mkfs.xfs -f -L timemachine /dev/sdf1
 ````
 
 Now that my drive is partitioned and formatted, I can move on to the next step.
@@ -199,4 +150,6 @@ If the disk is shared you can, however, limit the space Time Machine consumes by
 
 *the number is in MiB, so 500000 is 500GiB*
 
-[^1]: https://uefi.org/sites/default/files/resources/UEFI_Drive_Partition_Limits_Fact_Sheet.pdf
+[^1]: [Getting Started with Partitions](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_storage_devices/assembly_getting-started-with-partitions_managing-storage-devices)
+
+[^2]: [UEFI Drive Partition Limits Fact Sheet](https://uefi.org/sites/default/files/resources/UEFI_Drive_Partition_Limits_Fact_Sheet.pdf)
