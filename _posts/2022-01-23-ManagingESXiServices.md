@@ -26,7 +26,7 @@ To manage the host services in PowerCLI, I'll first start PowerShell core by typ
 
 In this case, I'm using PowerShell Core 7.2.1 on MacOS.
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/pwsh.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/pwsh.jpeg)
 
 ## Connecting to the ESXi Host
 
@@ -38,7 +38,7 @@ Connect-VIServer 192.168.178.92
 
 Since, I didn't supply the credentials already, I'll need to enter the username and password.
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/connectviserver.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/connectviserver.jpeg)
 
 ## VMHostService Commands
 
@@ -52,7 +52,7 @@ Get-VMHostService
 
 I can see the the SSH service is not running and its policy is "off", which means I must start and stop the service manually.
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/getvmhostservice.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/getvmhostservice.jpeg)
 
 I'll be using SSH for future configurations, so I'm going to start the service and set the policy to start with the host on boot.
 
@@ -78,7 +78,7 @@ By placing the whole line in parenthesis, I can then use `.GetType()` to show th
 (Get-VMHostService | Where-Object -Property Key -eq TSM-SSH).GetType()
 ````
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/objecterror.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/objecterror.jpeg)
 
 ## Starting and Stopping Services 
 
@@ -94,7 +94,7 @@ I can confirm by ssh'ing into the host.
 ssh root@192.168.178.92
 ````
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/startssh.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/startssh.jpeg)
 
 If I stop the service, I can no longer connect via SSH.
 
@@ -102,7 +102,7 @@ If I stop the service, I can no longer connect via SSH.
 Get-VMHostService | Where-Object -Property Key -eq TSM-SSH | Stop-VMHostService
 ````
 
-![_config.yml]({{ site.baseurl }}/images/managingesxiservices/stopssh.jpg)
+![_config.yml]({{ site.baseurl }}/images/managingesxiservices/stopssh.jpeg)
 
 ## Setting Service Policy
 
