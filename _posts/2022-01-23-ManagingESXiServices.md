@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Managing ESXi Services with PowerCLI
-published: false
+published: true
 tags: [PowerCLI,VMware]
 youtubeId: twDJu5wSPUw
 ---
