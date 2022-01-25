@@ -34,7 +34,7 @@ ssh root@nuc1.breakdown.lab
 
 The command to use for most ESXi management tasks is `esxcli`.  If you need help figuring out which options are available, you can type `--help` or simply hit Enter.
 
-![_config.yml]({{ site.baseurl }}/images/deletevsandatastore/esxclihelp.jpg)
+![_config.yml]({{ site.baseurl }}/images/deletevsandatastore/esxclihelp.jpeg)
 
 Before I can clear the partitions, I'll first need to leave the vSAN cluster. To list the cluster configuration, I'll use:
 
