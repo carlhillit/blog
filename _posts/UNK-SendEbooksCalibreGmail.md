@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Deploy OVA to VM
+title: Send and Ebook to Kindle via Email with Calibre
 published: false
-tags: [PowerCLI,VMware]
+tags: [Calibre]
 youtubeId: 8kHbFiHTb4Q
 ---
 
@@ -10,9 +10,18 @@ This section will show as post preview on homepage. Keep to one short sentence o
 
 {% include youtubePlayer.html id=page.youtubeId %} <!-- embedded youtube player, remove if no yt video accompanies the post -->
 
+## App Password
+
+Need an app password from Gmail
+
 ## First Header
 
-Some text
+Send email from: Your gmail address
+Hostname: imap.gmail.com
+Port: 465
+Username: Your gmail address
+Password: Your app password
+Encryption: SSL
 
 ![_config.yml]({{ site.baseurl }}/images/deployova/invaliduri.jpg) <!-- embedded image url -->
 
