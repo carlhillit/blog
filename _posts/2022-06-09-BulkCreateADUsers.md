@@ -19,7 +19,7 @@ The four parts to the script that I'll be breaking down are:
 This is an example of a CSV file with users and the values of the Active Directory account attributes
 
 ````csv
-GivenName,SurName,IDNo,Role                 
+GivenName,SurName,EmployeeID,Department                 
 James,Smith,123001,Accounting
 Michael,Miller,123007,Management
 Barbara,Lopez,123012,Research and Development
@@ -43,14 +43,14 @@ Now I can recall that object by typing the variable `$usersCsv` and
 
 Output:
 ````
-GivenName   SurName   IDNo   Role                    
----------   -------   ----   ----                    
-James       Smith     123001 Accounting              
-Michael     Miller    123007 Management                     
-Barbara     Lopez     123012 Research and Development
-Daniel      Thompson  123023 Analyst                                                             
-Michelle    Adams     123042 Sales
-Deborah     Roberts   123050 Human Resources         
+GivenName   SurName   EmployeeID   Role                    
+---------   -------   ----         ----                    
+James       Smith     123001       Accounting              
+Michael     Miller    123007       Management                     
+Barbara     Lopez     123012       Research and Development
+Daniel      Thompson  123023       Analyst                                                             
+Michelle    Adams     123042       Sales
+Deborah     Roberts   123050       Human Resources         
 ````
 
 I can also view a single property and it's values by using `$usersCsv.GivenName`
