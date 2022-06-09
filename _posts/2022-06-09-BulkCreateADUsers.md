@@ -14,7 +14,7 @@ The four parts to the script that I'll be breaking down are:
 3. [Create an Active Directory user with the New-ADUser cmdlet](#Create an Active Directory User with the New-ADUser Cmdlet)
 4. [Using Splatting with New-ADUser](#Using Splatting)
 
-## Importing a CSV file into PowerShell[^1]
+## Importing a CSV file into PowerShell
 
 This is an example of a CSV file with users and the values of the Active Directory account attributes
 
@@ -39,7 +39,7 @@ I'd like to use that object for things later in the script, so I'll assign that 
 $usersCsv = Import-Csv -Path C:\users.csv
 ````
 
-Now I can recall that object by typing the variable `$usersCsv` and view the properties and their values by using `$usersCsv.GivenName`
+Now I can recall that object by typing the variable `$usersCsv` and
 
 Output:
 ````
@@ -51,6 +51,18 @@ Barbara     Lopez     123012 Research and Development
 Daniel      Thompson  123023 Analyst                                                             
 Michelle    Adams     123042 Sales
 Deborah     Roberts   123050 Human Resources         
+````
+
+I can also view a single property and it's values by using `$usersCsv.GivenName`
+
+Output:
+````
+James
+Michael
+Barbara
+Daniel                    
+Michelle
+Deborah
 ````
 
 ## foreach Loop to Iterate Through the Users Object
