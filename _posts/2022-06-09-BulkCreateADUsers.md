@@ -9,17 +9,29 @@ Need to create a metric boat load of Active Directory users quickly?
 PowerShell is your best tool for the job.
 
 The four parts to the script that I'll be breaking down are:
-1. [Importing a comma separated value (CSV) file into PowerShell to be used as an object](#Importing a CSV file into PowerShell)
-2. [Using a `foreach` loop to iterate through the imported CSV and perform a single action to each item in the CSV](#foreach Loop to Iterate Through the Users Object)
-3. [Create an Active Directory user with the `New-ADUser` cmdlet](#Create an Active Directory User with the `New-ADUser` Cmdlet)
-4. [Using *splatting* to tidy up many parameters of the `New-ADUser` cmdlet](#Using Splatting)
+1. [Importing a CSV file into PowerShell to be used as an object](#Importing a CSV file into PowerShell)
+2. [Using a foreach loop to iterate through the imported CSV and perform a single action to each item in the CSV](#foreach Loop to Iterate Through the Users Object)
+3. [Create an Active Directory user with the New-ADUser cmdlet](#Create an Active Directory User with the New-ADUser Cmdlet)
+4. [Using Splatting with New-ADUser](#Using Splatting)
 
 ## Importing a CSV file into PowerShell[^1]
 
 This is an example of a CSV file with users and the values of the Active Directory account attributes
 
-The following command outputs a PSCustomObject
+````csv
+GivenName,SurName,IDNo,Role                 
+James,Smith,123001,Accounting
+Michael,Miller,123007,Management
+Barbara,Lopez,123012,Research and Development
+Daniel,Thompson,123023,Analyst                    
+Michelle,Adams,123042,Sales
+Deborah,Roberts,123050,Human Resources
+````
+The Import-Csv[^1] cmdlet imports the CSV file into PowerShell as a PSCustomObject:
+
+````powershell
 Import-Csv -Path C:\users.csv
+````
 
 I'd like to use that object for things later in the script, so I'll assign that object to the variable `$usersCsv` and that users CSV object is stored in memory (RAM).
 
@@ -30,11 +42,20 @@ $usersCsv = Import-Csv -Path C:\users.csv
 Now I can recall that object by typing the variable `$usersCsv` and view the properties and their values by using `$usersCsv.GivenName`
 
 Output:
+````
+GivenName   SurName   IDNo   Role                    
+---------   -------   ----   ----                    
+James       Smith     123001 Accounting              
+Michael     Miller    123007 Management                     
+Barbara     Lopez     123012 Research and Development
+Daniel      Thompson  123023 Analyst                                                             
+Michelle    Adams     123042 Sales
+Deborah     Roberts   123050 Human Resources         
+````
 
+## foreach Loop to Iterate Through the Users Object
 
-## foreach Loop to Iterate Through the Users Object[^2]
-
-The basic form of a foreach loop is:
+The basic form of a foreach loop[^2] is:
 ````powershell
 foreach ($user in $userCsv) { 
 	"some action"
@@ -57,9 +78,9 @@ foreach ($user in $userCsv) {
 ````
 
 
-## Create an Active Directory User with the `New-ADUser` Cmdlet[^3]
+## Create an Active Directory User with the New-ADUser Cmdlet
 
-New-ADUser is fairly straight forward, but there are a few things that should be known:
+New-ADUser[^3] is fairly straight forward, but there are a few things that should be known:
 
 `-AccountPassword`
 *  If $null or no password is specified then no password is set and the account is disabled unless it is requested to be enabled.
@@ -87,8 +108,8 @@ New-ADUser -Name ($user.SurName)+', '+($user.GivenName) -SamAccountName $user.Em
 That's quite long and probably difficult to read. Unless you're reading from an ultrawide monitor the above command is likely viewed only by scrolling far over.
 This is not great for scripting. Splatting is a much better form to use.
 
-### Using Splatting[^4]
-Splatting is a way to consolidate all parameters and their values into key pairs. It's a lot easier when scripting because it resembles more of a column format rather than a long horizontally run-on cmdlet.
+### Using Splatting
+Splatting[^4] is a way to consolidate all parameters and their values into key pairs. It's a lot easier when scripting because it resembles more of a column format rather than a long horizontally run-on cmdlet.
 
 Start with a regular variable assignment, then begin the key pairs with a hash table `@{ }`
 
