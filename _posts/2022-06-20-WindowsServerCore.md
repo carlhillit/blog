@@ -3,12 +3,12 @@ layout: post
 title: Windows Server Core
 published: false
 tags: [PowerShell,Server Core]
-youtubeId: 8kHbFiHTb4Q
+youtubeId: _dZAneAmRU
 ---
 
 How to install and provision Windows Server Core 2022.
 
-{% include youtubePlayer.html id=page.youtubeId %} <!-- embedded youtube player, remove if no yt video accompanies the post -->
+{% include youtubePlayer.html id=page.youtubeId %}
 
 # Contents
 
@@ -171,9 +171,6 @@ Get-Disk -Number 2 | Initialize-Disk -PartitionStyle GPT -PassThru | New-Volume 
 
 Now that the extra drives are formatted, and everything is set, I can use this machine as a reference VM to [Export to an OVA template]({% link _posts/_posts/2021-12-3-ExportingVMtoOVA.md %}), but I recommend clearing network config and the [Windows Security Identifier](https://techcommunity.microsoft.com/t5/windows-blog-archive/the-machine-sid-duplication-myth-and-why-sysprep-matters/ba-p/723859).
 
-
-
-![_config.yml]({{ site.baseurl }}/images/deployova/invaliduri.jpg) <!-- embedded image url -->
 
 
 [^1]: https://docs.microsoft.com/en-us/windows-server/administration/server-core/what-is-server-core
