@@ -12,10 +12,10 @@ PowerShell is your best tool for the job.
 {% include youtubePlayer.html id=page.youtubeId %}
 
 The four parts to the script that I'll be breaking down are:
-1. [Importing a CSV file into PowerShell to be used as an object](#Importing-a-CSV-file-into-PowerShell)
-2. [Using a foreach loop to iterate through the imported CSV and perform a single action to each item in the CSV](#foreach-Loop-to-Iterate-Through-the-Users-Object)
-3. [Create an Active Directory user with the New-ADUser cmdlet](#Create-an-Active-Directory-User-with-the-New-ADUser-Cmdlet)
-4. [Using Splatting with New-ADUser](#Using-Splatting)
+1. [Importing a CSV file into PowerShell to be used as an object](#importing-a-csv-file-into-powershell)
+2. [Using a foreach loop to iterate through the imported CSV and perform a single action to each item in the CSV](#foreach-loop-to-iterate-ihrough-the-users-object)
+3. [Create an Active Directory user with the New-ADUser cmdlet](#create-an-active-directory-user-with-the-new-aduser-cmdlet)
+4. [Using Splatting with New-ADUser](#using-splatting)
 
 ## Importing a CSV file into PowerShell
 
