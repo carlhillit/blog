@@ -2,9 +2,10 @@
 layout: post
 title: Migrating Plex Media Server
 published: true
-tags: [Linux,Plex]
+tags: [Linux,Plex,ZFS]
 ---
 
+How to migrate Plex Media Server from one OS with ZFS to another.
 
 ## Intro
 
