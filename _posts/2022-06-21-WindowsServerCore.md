@@ -3,12 +3,12 @@ layout: post
 title: Windows Server Core
 published: true
 tags: [PowerShell,'Server Core']
-youtubeId: _dZAneAmRU
+<!--youtubeId: _dZAneAmRU--!>
 ---
 
 How to install and provision Windows Server Core 2022.
 
-{% include youtubePlayer.html id=page.youtubeId %}
+<!-- {% include youtubePlayer.html id=page.youtubeId %} --!>
 
 # Contents
 
