@@ -3,20 +3,20 @@ layout: post
 title: Windows Server Core
 published: true
 tags: [PowerShell,'Server Core']
-<!--youtubeId: _dZAneAmRU--!>
+youtubeId: -_dZAneAmRU
 ---
 
 How to install and provision Windows Server Core 2022.
 
-<!-- {% include youtubePlayer.html id=page.youtubeId %} --!>
+{% include youtubePlayer.html id=page.youtubeId %}
 
 # Contents
 
 1. [Why Windows Server Core?](#why-windows-server-core)
 2. [Creating the VM in vCenter](#creating-the-vm)
-3. [Installing Windows Server Core](#installing-windows-server-core)
+3. [Install Windows Server Core](#install-windows-server-core)
 4. [Initial Configuration](#initial-configuration)
-5. [Formatting Disks](#formatting-disks)
+5. [Format Disks](#format-disks)
 6. [Conclusion](#conclusion)
 
 ## Why Windows Server Core
