@@ -2,7 +2,7 @@
 layout: post
 title: Windows Server Core
 published: true
-tags: [PowerShell,Server Core]
+tags: [PowerShell,'Server Core]'
 youtubeId: _dZAneAmRU
 ---
 
