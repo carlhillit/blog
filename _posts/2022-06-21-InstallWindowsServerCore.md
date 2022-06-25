@@ -53,7 +53,7 @@ The bigger benefit, in my opinion, is that it forces you to learn how to manage 
 Without a GUI, you don't have the temptation to use the VM console or RDP when you need to accomplish some random task.
 This is particularly true when troubleshooting or provisioning a new machine.
 
-TLDR; Server Core is great for learning PowerShell.
+TLDR Server Core is great for learning PowerShell.
 Without the GUI it keeps you from using the path of least resistance and teaches you to treat your servers like [cattle, not pets](http://cloudscaling.com/blog/cloud-computing/the-history-of-pets-vs-cattle/).
 
 
@@ -64,7 +64,7 @@ I'll briefly go over the steps to create the VM in vCenter to show the VM's conf
 
 ### Select a compute resource & Select storage
 
-I'll creating a new Virtual Machine on the NVME datastore on host #3.
+I'll creating a new Virtual Machine on the NVMe datastore on host number 3.
 
 ### Select a guest OS
 
@@ -132,13 +132,13 @@ The Server Configuration tool, called [SConfig](https://docs.microsoft.com/en-us
 
 I'll choose the corresponding number and follow the on-screen directions to change the following:
 
-* Set Hostname (opt #2)
-* Set static IP address (opt #8)
-* Set Timezone (opt #9)
-* Disable Telemetry (opt #10)
-* Install Updates (opt #6)
+* Set Hostname (opt 2)
+* Set static IP address (opt 8)
+* Set Timezone (opt 9)
+* Disable Telemetry (opt 10)
+* Install Updates (opt 6)
 
-Once those are completed, reboot the server (opt #13).
+Once those are completed, reboot the server (opt 13).
 
 ## Format Disks
 
@@ -157,13 +157,17 @@ The FriendlyName is optional but assigning a label to the volume will help ident
 This drive will host the NTDS database of a domain controller, so I'll name it "NTDS".
 
 ````posh
-Get-Disk -Number 1 | Initialize-Disk -PartitionStyle GPT -PassThru | New-Volume -FileSystem NTFS -DriveLetter E -FriendlyName NTDS 
+Get-Disk -Number 1 |
+    Initialize-Disk -PartitionStyle GPT -PassThru |
+    New-Volume -FileSystem NTFS -DriveLetter E -FriendlyName NTDS 
 ````
 
 Repeat the command with Disk #2, assign a different drive letter, and name it "Logs".
 
 ````posh
-Get-Disk -Number 2 | Initialize-Disk -PartitionStyle GPT -PassThru | New-Volume -FileSystem NTFS -DriveLetter F -FriendlyName Logs 
+Get-Disk -Number 2 |
+    Initialize-Disk -PartitionStyle GPT -PassThru |
+    New-Volume -FileSystem NTFS -DriveLetter F -FriendlyName Logs 
 ````
 
 ## Conclusion
