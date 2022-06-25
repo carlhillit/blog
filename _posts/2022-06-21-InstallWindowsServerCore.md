@@ -172,7 +172,7 @@ Get-Disk -Number 2 |
 
 ## Conclusion
 
-Now that the extra drives are formatted, and everything is set, I can use this machine as a reference VM to [Export to an OVA template]({% link _posts/_posts/2021-12-3-ExportingVMtoOVA.md %}), but I recommend clearing network config and the [Windows Security Identifier](https://techcommunity.microsoft.com/t5/windows-blog-archive/the-machine-sid-duplication-myth-and-why-sysprep-matters/ba-p/723859).
+Now that the extra drives are formatted, and everything is set, I can use this machine as a reference VM to Export to an OVA template, but I recommend clearing network config and the [Windows Security Identifier](https://techcommunity.microsoft.com/t5/windows-blog-archive/the-machine-sid-duplication-myth-and-why-sysprep-matters/ba-p/723859).
 
 
 
