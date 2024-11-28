@@ -2,7 +2,7 @@
 layout: post
 title: Simplicity Wins in the End
 published: true
-tags: []
+tags: [nuggets]
 ---
 
 Keeping systems and configurations simple pays off massively for everyone in the long run.
