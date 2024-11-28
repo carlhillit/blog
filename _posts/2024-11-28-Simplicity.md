@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simplicity Wins in the End
-published: false
+published: true
 tags: []
 ---
 
@@ -11,7 +11,7 @@ Keeping systems and configurations simple pays off massively for everyone in the
 
 >"The definition of genius is taking the complex and making it simple."
 
- -- Albert Einstein
+
 
 Its easy to make complex systems.
 More features and capabilities are added as time goes along.
